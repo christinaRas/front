@@ -1,0 +1,44 @@
+.container {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+    padding: 20px;
+}
+
+.cultures-list {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 10px;
+}
+
+.culture-item {
+    border: 1px solid #ccc;
+    padding: 10px;
+}
+
+.search {
+    padding: 10px;
+}
+
+.search form {
+    display: grid;
+    grid-template-columns: 1fr auto;
+    gap: 10px;
+}
+
+.search input[type="text"] {
+    width: 100%;
+    padding: 8px;
+}
+
+.search button {
+    padding: 8px 20px;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+}
+
+.search button:hover {
+    background-color: #0056b3;
+}
