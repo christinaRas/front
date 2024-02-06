@@ -1,53 +1,59 @@
-/* typographie */
-h1{
-  grid-column:span 3;
-  background:#f60;
-}
-
-/* arial paragraphe 1 */
-p:nth-of-type(1){
-  background:#f60;
-  grid-row:span 3;
-}
-
-/* helvetica et gotham <p> 2 et 4*/
-p:nth-of-type(2),
-p:nth-of-type(4){
-  background:#000;
-  grid-row:span 2;
-}
-
-/* georgia et futura */
-/*  RIEN  :) */
-
-
-/* le reste pour que ça marche */
-
-.grid{
-  display:grid; /* le fameux */
-  grid-template-columns:1fr 1fr 1fr 1fr; /* 4 colonnes de largeur = */
-  grid-template-rows:200px 200px 200px ; /* 3 rangées */
-  grid-row-gap:12px; /* gouttière de rangées */
-  grid-column-gap:12px; /* gouttière de colonnes */
-  padding:0; 
-  margin:12px;
-  max-width:960px;
-}
-
-.grid>*{
-  padding:12px;
-  margin:0;
-  color:#fff;
-  background:#222;
-  margin:0;
-  display:block;
-}
+body {
+    display: grid;
+    grid-template-areas: 
+      "header header header"
+      "nav article ads"
+      "footer footer footer";
+    grid-template-rows: 100px 1fr 70px;
+    grid-template-columns: 20% 1fr 15%;
+    grid-row-gap: 10px;
+    grid-column-gap: 10px;
+    height: 100vh;
+    margin: 0;
+  }
 
 
 
-body{
-  font-family:sans-serif;
-  margin:0;
-  line-height:1.5;
-  background:#eee;
-}
+  header, footer, article, nav, div {
+    padding: 1.2em;
+    background: rgb(80, 80, 80);
+    }
+
+    header, div {
+        padding: 1.4em;
+        background: rgb(80, 80, 80);
+        }
+
+  #pageHeader {
+    grid-area: header;
+    }
+
+  #pageFooter {
+    grid-area: footer;
+    }
+
+  #mainArticle { 
+    grid-area: article;      
+    }
+
+  #mainNav { 
+    grid-area: nav; 
+    }
+
+  #siteAds { 
+    grid-area: ads; 
+    } 
+    
+    @media all and (max-width: 575px) {
+        body { 
+          grid-template-areas: 
+            "header"
+            "article"
+            "ads"
+            "nav"
+            "footer";
+          grid-template-rows: 120px 1fr 70px 1fr 70px;  
+          grid-template-columns: 1fr;
+        }
+      }
+      
