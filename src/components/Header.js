@@ -46,11 +46,12 @@ function Header() {
                     <span className="icon-bar"></span>
                 </div>
                 <div id="nav-content" tabIndex="0">
-                    <ul>
-                        <li><a href="#" onClick={handleParcellesClick}>Parcelles</a></li>
-                        <li><a href="#" onClick={handleCulturesClick}>Cultures</a></li>
-                        <li><a href="#" onClick={handleProprietairesClick}>Proprietaires</a></li>
-                    </ul>
+                <ul>
+                    <li><button onClick={handleParcellesClick}>Parcelles</button></li>
+                    <li><button onClick={handleCulturesClick}>Cultures</button></li>
+                    <li><button onClick={handleProprietairesClick}>Proprietaires</button></li>
+                </ul>
+
                 </div>
             </div>
 
