@@ -10,27 +10,27 @@ function Header() {
     const [showParcelles, setShowParcelles] = useState(false);
     const [showCultures, setShowCultures] = useState(false);
     const [showProprietaires, setShowProprietaires] = useState(false);
-    const [hasChosen, setHasChosen] = useState(false); // Ajoutez un état pour suivre si l'utilisateur a choisi un bouton ou non
+    const [hasChosen, setHasChosen] = useState(false); 
 
     const handleParcellesClick = () => {
         setShowParcelles(!showParcelles);
         setShowCultures(false); 
         setShowProprietaires(false);
-        setHasChosen(true); // L'utilisateur a choisi un bouton
+        setHasChosen(true); 
     };
 
     const handleCulturesClick = () => { 
         setShowCultures(!showCultures);
         setShowParcelles(false);
         setShowProprietaires(false);
-        setHasChosen(true); // L'utilisateur a choisi un bouton
+        setHasChosen(true); 
     };
 
     const handleProprietairesClick = () => {
         setShowProprietaires(!showProprietaires);
         setShowParcelles(false);
         setShowCultures(false);
-        setHasChosen(true); // L'utilisateur a choisi un bouton
+        setHasChosen(true); 
     };
 
     return (
@@ -46,16 +46,14 @@ function Header() {
                     <span className="icon-bar"></span>
                 </div>
                 <div id="nav-content" tabIndex="0">
-                <ul>
-                    <li><button onClick={handleParcellesClick}>Parcelles</button></li>
-                    <li><button onClick={handleCulturesClick}>Cultures</button></li>
-                    <li><button onClick={handleProprietairesClick}>Proprietaires</button></li>
-                </ul>
-
+                    <ul>
+                        <li><button className="nav-button" onClick={handleParcellesClick}>Parcelles</button></li>
+                        <li><button className="nav-button" onClick={handleCulturesClick}>Cultures</button></li>
+                        <li><button className="nav-button" onClick={handleProprietairesClick}>Proprietaires</button></li>
+                    </ul>
                 </div>
             </div>
 
-            {/* Affichez le message "WELCOME TO AGRIGAME" si l'utilisateur n'a pas encore choisi de bouton */}
             {!hasChosen && (
                 <h1 style={{ textAlign: 'center', fontSize: '5rem', color: 'white', marginTop:'200px' }}>WELCOME TO AGRIGAME</h1>
             )}
