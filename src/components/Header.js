@@ -10,30 +10,34 @@ function Header() {
     const [showParcelles, setShowParcelles] = useState(false);
     const [showCultures, setShowCultures] = useState(false);
     const [showProprietaires, setShowProprietaires] = useState(false);
+    const [hasChosen, setHasChosen] = useState(false); // Ajoutez un état pour suivre si l'utilisateur a choisi un bouton ou non
 
     const handleParcellesClick = () => {
         setShowParcelles(!showParcelles);
         setShowCultures(false); 
         setShowProprietaires(false);
+        setHasChosen(true); // L'utilisateur a choisi un bouton
     };
 
     const handleCulturesClick = () => { 
         setShowCultures(!showCultures);
         setShowParcelles(false);
         setShowProprietaires(false);
+        setHasChosen(true); // L'utilisateur a choisi un bouton
     };
 
     const handleProprietairesClick = () => {
         setShowProprietaires(!showProprietaires);
         setShowParcelles(false);
         setShowCultures(false);
+        setHasChosen(true); // L'utilisateur a choisi un bouton
     };
 
     return (
         <div>
             <div id="nav-container">
                 <div className="logo">
-                    <img src={logo}/>
+                    <img src={logo} alt="Logo Agrigame"/>
                 </div>
                 <div className="bg"></div>
                 <div className="button" tabIndex="0">
@@ -49,6 +53,11 @@ function Header() {
                     </ul>
                 </div>
             </div>
+
+            {/* Affichez le message "WELCOME TO AGRIGAME" si l'utilisateur n'a pas encore choisi de bouton */}
+            {!hasChosen && (
+                <h1 style={{ textAlign: 'center', fontSize: '5rem', color: 'white', marginTop:'200px' }}>WELCOME TO AGRIGAME</h1>
+            )}
 
             {showParcelles && <ParcelleComponent />}
             {showCultures && <CultureComponent />}
